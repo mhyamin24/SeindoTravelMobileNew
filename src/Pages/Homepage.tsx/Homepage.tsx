@@ -6,45 +6,35 @@ import {
   ScrollView,
   useWindowDimensions,
   TouchableOpacity,
+  Animated,
 } from "react-native";
 import React from "react";
-import PagerView from "react-native-pager-view";
 import { useNavigation } from "@react-navigation/native";
+import PagerView from "react-native-pager-view";
+import { SceneMap } from "react-native-tab-view";
 
-function SceneMap({
-  FirstRoute,
-  SecondRoute,
-}: {
-  firstRoute: () => React.ReactElement;
-  secondRoute: () => React.ReactElement;
-}) {
-  return {
-    FirstRoute: FirstRoute(),
-    SecondRoute: SecondRoute(),
-  };
-}
+// const FirstRoute = () => (
+//   <View style={{ flex: 1, backgroundColor: "#ff4081" }} />
+// );
 
-const FirstRoute = () => (
-  <View style={{ flex: 1, backgroundColor: "#ff4081" }} />
-);
+// const SecondRoute = () => (
+//   <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
+// );
 
-const SecondRoute = () => (
-  <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
-);
+// const renderScene = SceneMap({
+//   first: FirstRoute,
+//   second: SecondRoute,
+// });
+
+// const layout = useWindowDimensions();
+
+// const [index, setIndex] = React.useState(0);
+// const [routes] = React.useState([
+//   { key: "first", title: "First" },
+//   { key: "second", title: "Second" },
+// ]);
 
 const Homepage = () => {
-  const layout = useWindowDimensions();
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: "first", title: "First" },
-    { key: "second", title: "Second" },
-  ]);
-
-  const renderScene = SceneMap({
-    first: FirstRoute,
-    second: SecondRoute,
-  });
-
   const navigation = useNavigation();
 
   const FoodDetails = () => {
@@ -61,7 +51,7 @@ const Homepage = () => {
           </TouchableOpacity>
           <Text style={{ paddingBottom: 20 }}>Let's get some foods</Text>
         </View>
-        <View></View>
+        {/* <View></View> */}
         <Image
           source={require("../../../assets/profileimg.png")}
           style={{
@@ -225,12 +215,12 @@ const Homepage = () => {
           </View>
         </ScrollView>
         <View style={{ flex: 1 }}>
-          <PagerView
+          {/* <PagerView
             navigationState={{ index, routes }}
             renderScene={renderScene}
             onIndexChange={setIndex}
             initialLayout={{ width: layout.width }}
-          />
+          /> */}
         </View>
       </View>
     </View>
@@ -271,6 +261,6 @@ const styles = StyleSheet.create({
 // function SceneMap(arg0: {
 //   first: () => React.JSX.Element;
 //   second: () => React.JSX.Element;
-{
-  throw new Error("Function not implemented.");
-}
+// {
+//   throw new Error("Function not implemented.");
+// }
