@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { Icon } from "@rneui/base";
 import { useNavigation } from "@react-navigation/native";
+import { SceneMap, TabView } from "react-native-tab-view";
 
 const Profile = () => {
   console.log = (props: any) => {};

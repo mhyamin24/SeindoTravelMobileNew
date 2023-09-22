@@ -4,35 +4,14 @@ import {
   View,
   Image,
   ScrollView,
-  useWindowDimensions,
   TouchableOpacity,
   Animated,
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import PagerView from "react-native-pager-view";
-import { SceneMap } from "react-native-tab-view";
-
-// const FirstRoute = () => (
-//   <View style={{ flex: 1, backgroundColor: "#ff4081" }} />
-// );
-
-// const SecondRoute = () => (
-//   <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
-// );
-
-// const renderScene = SceneMap({
-//   first: FirstRoute,
-//   second: SecondRoute,
-// });
-
-// const layout = useWindowDimensions();
-
-// const [index, setIndex] = React.useState(0);
-// const [routes] = React.useState([
-//   { key: "first", title: "First" },
-//   { key: "second", title: "Second" },
-// ]);
+// import PagerView from "react-native-pager-view";
+// import { SceneMap, TabBar, TabView } from "react-native-tab-view";
+import HomeTabSection from "../../Components/HomeTabSection";
 
 const Homepage = () => {
   const navigation = useNavigation();
@@ -41,7 +20,7 @@ const Homepage = () => {
     navigation.navigate("FoodDetails");
   };
   return (
-    <View style={{ flex: 1, backgroundColor: "yellow" }}>
+    <View style={{ flex: 1 }}>
       <View style={styles.profile}>
         <View>
           <TouchableOpacity onPress={FoodDetails}>
@@ -62,6 +41,7 @@ const Homepage = () => {
           }}
         />
       </View>
+      <View></View>
       <View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={{ flexDirection: "row" }}>
@@ -214,14 +194,9 @@ const Homepage = () => {
             </View>
           </View>
         </ScrollView>
-        <View style={{ flex: 1 }}>
-          {/* <PagerView
-            navigationState={{ index, routes }}
-            renderScene={renderScene}
-            onIndexChange={setIndex}
-            initialLayout={{ width: layout.width }}
-          /> */}
-        </View>
+      </View>
+      <View style={{ flex: 1 }}>
+        <HomeTabSection />
       </View>
     </View>
   );
@@ -258,9 +233,3 @@ const styles = StyleSheet.create({
     height: 16,
   },
 });
-// function SceneMap(arg0: {
-//   first: () => React.JSX.Element;
-//   second: () => React.JSX.Element;
-// {
-//   throw new Error("Function not implemented.");
-// }
