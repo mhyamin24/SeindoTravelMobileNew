@@ -63,7 +63,6 @@ const Login = () => {
                 <TextInput
                   secureTextEntry={!showPassword}
                   textAlign="left"
-                  // style={styles.input}
                   placeholder="Password"
                 />
                 <TouchableOpacity onPress={togglePasswordVisibility}>
@@ -97,9 +96,7 @@ const Login = () => {
                 style={{
                   justifyContent: "center",
                   alignItems: "center",
-                  // marginVertical: 20,
                   marginHorizontal: 40,
-                  // elevation: 10,
                   height: 40,
                   backgroundColor: "orange",
                   borderRadius: 5,
