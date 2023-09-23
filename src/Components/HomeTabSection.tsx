@@ -30,17 +30,41 @@ const renderTabBar = (props) => (
 );
 
 const NewTaste = () => (
-  <View style={{ paddingTop: 10 }}>
-    <ListFood />
-    <ListFood />
-    <ListFood />
-    <ListFood />
-  </View>
+  <ScrollView>
+    <View style={{ paddingTop: 10 }}>
+      <ListFood />
+      <ListFood />
+      <ListFood />
+      <ListFood />
+      <ListFood />
+      <ListFood />
+    </View>
+  </ScrollView>
 );
 
-const Popular = () => <View style={{ flex: 1, backgroundColor: "#673ab7" }} />;
+const Popular = () => (
+  <ScrollView>
+    <View style={{ paddingTop: 10 }}>
+      <ListFood />
+      <ListFood />
+      <ListFood />
+      <ListFood />
+      <ListFood />
+      <ListFood />
+    </View>
+  </ScrollView>
+);
 const Recommended = () => (
-  <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
+  <ScrollView>
+    <View style={{ paddingTop: 10 }}>
+      <ListFood />
+      <ListFood />
+      <ListFood />
+      <ListFood />
+      <ListFood />
+      <ListFood />
+    </View>
+  </ScrollView>
 );
 const initialLayout = { width: Dimensions.get("window").width };
 
