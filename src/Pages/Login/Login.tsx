@@ -1,22 +1,22 @@
 import {
-  View,
-  Text,
   StyleSheet,
+  Text,
   TextInput,
   TouchableOpacity,
+  View,
 } from "react-native";
-import { Icon } from "@rneui/base";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { Icon } from "@rneui/base";
 
 const Login = () => {
   const navigation = useNavigation();
 
-  const goToLoginsuccesPage = () => {
+  const goToLoginSucces = () => {
     navigation.navigate("Loginsucces");
   };
 
-  const goToCreateAccountPage = () => {
+  const goToCreateAccount = () => {
     navigation.navigate("Signup");
   };
 
@@ -26,87 +26,52 @@ const Login = () => {
   };
 
   return (
-    <View>
-      <View>
-        <View
-          style={{
-            justifyContent: "flex-start",
-            marginTop: 30,
-            paddingHorizontal: 40,
-            backgroundColor: "white",
-          }}
-        >
-          <Text style={{ paddingVertical: 10, fontSize: 30, fontWeight: 200 }}>
-            Login
-          </Text>
-          <Text style={{ paddingBottom: 30 }}>Find your best ever meal</Text>
+    <View style={styles.page}>
+      <View style={styles.container1}>
+        <Text style={styles.title}>Login</Text>
+        <Text style={styles.subtitle}>Find your beat meal</Text>
+      </View>
+
+      <View style={styles.container2}>
+        <View style={{ paddingBottom: 16 }}>
+          <Text style={styles.label}>Email Address</Text>
+          <TextInput style={styles.input1} placeholder="Enter your email" />
         </View>
-        <View>
-          <View style={styles.container}>
-            <View style={{ marginVertical: 10, marginHorizontal: 40 }}>
-              <Text style={{ fontSize: 18 }}>Email Address</Text>
-            </View>
 
-            <View style={styles.login}>
-              <TextInput
-                textAlign="left"
-                style={styles.input}
-                placeholder="Enter your email"
+        <View style={{ paddingBottom: 24 }}>
+          <Text style={styles.label}>Password</Text>
+          <View style={styles.passwordinput}>
+            <TextInput
+              placeholder="Password"
+              secureTextEntry={!showPassword}
+              textAlign="left"
+            />
+
+            <TouchableOpacity
+              onPress={togglePasswordVisibility}
+              style={{ justifyContent: "center", alignItems: "center" }}
+            >
+              <Icon
+                name={showPassword ? "eye" : "eye-off"}
+                type="feather"
+                size={20}
+                color={"gray"}
               />
-            </View>
-            <View style={{ marginVertical: 10, marginHorizontal: 40 }}>
-              <Text style={{ fontSize: 18 }}>Password</Text>
-            </View>
-
-            <View style={styles.login}>
-              <View style={styles.input}>
-                <TextInput
-                  secureTextEntry={!showPassword}
-                  textAlign="left"
-                  placeholder="Password"
-                />
-                <TouchableOpacity onPress={togglePasswordVisibility}>
-                  <Icon
-                    name={showPassword ? "eye" : "eye-with-line"}
-                    type="entypo"
-                    size={20}
-                    color={"gray"}
-                  />
-                </TouchableOpacity>
-              </View>
-            </View>
-
-            <TouchableOpacity onPress={goToLoginsuccesPage}>
-              <View
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginVertical: 20,
-                  marginHorizontal: 40,
-                  height: 40,
-                  backgroundColor: "orange",
-                  borderRadius: 5,
-                }}
-              >
-                <Text>Login</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={goToCreateAccountPage}>
-              <View
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginHorizontal: 40,
-                  height: 40,
-                  backgroundColor: "orange",
-                  borderRadius: 5,
-                }}
-              >
-                <Text>Create New Account</Text>
-              </View>
             </TouchableOpacity>
           </View>
         </View>
+
+        <TouchableOpacity onPress={goToLoginSucces}>
+          <View style={styles.button1}>
+            <Text>Login</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={goToCreateAccount}>
+          <View style={styles.button2}>
+            <Text>Create New Account</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -115,29 +80,77 @@ const Login = () => {
 export default Login;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-
-    marginTop: 20,
-  },
-
-  login: {
-    elevation: 3,
-    paddingHorizontal: 40,
-    flexDirection: "row",
+  button1: {
     alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFC700",
+    padding: 12,
+    marginVertical: 10,
+    borderRadius: 8,
   },
-  input: {
-    width: 400,
-    height: 45,
-    elevation: 2,
-    borderRadius: 5,
+  button2: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#8D92A3",
+    padding: 12,
+    marginVertical: 10,
+    borderRadius: 8,
+  },
+
+  container1: {
     backgroundColor: "white",
+    paddingHorizontal: 24,
+    paddingTop: 30,
+    paddingBottom: 24,
+  },
+  container2: {
+    backgroundColor: "white",
+    paddingHorizontal: 24,
+    paddingVertical: 26,
+    marginTop: 24,
+    flex: 1,
+  },
+
+  input1: {
+    width: 430,
     borderWidth: 1,
-    paddingLeft: 10,
-    justifyContent: "space-between",
-    paddingHorizontal: 10,
-    alignItems: "center",
+    borderColor: "#020202",
+    borderRadius: 8,
+    padding: 10,
+  },
+  input2: {
+    width: 430,
+    borderWidth: 1,
+    borderColor: "#020202",
+    borderRadius: 8,
+    padding: 10,
+  },
+
+  label: {
+    fontSize: 14,
+    paddingBottom: 10,
+    color: "#020202",
+  },
+
+  page: {
+    flex: 1,
+  },
+
+  passwordinput: {
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#020202",
+    borderRadius: 8,
+    padding: 10,
+  },
+  title: {
+    fontSize: 22,
+    color: "#020202",
+  },
+  subtitle: {
+    fontSize: 14,
+    color: "#8D92A3",
   },
 });

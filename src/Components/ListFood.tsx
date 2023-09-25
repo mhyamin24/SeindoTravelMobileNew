@@ -3,7 +3,7 @@ import React from "react";
 
 const ListFood = () => {
   return (
-    <ScrollView>
+    
       <View
         style={{
           flexDirection: "row",
@@ -39,7 +39,6 @@ const ListFood = () => {
           <Text style={{ color: "#8D92A3", paddingHorizontal: 10 }}>4.5</Text>
         </View>
       </View>
-    </ScrollView>
   );
 };
 

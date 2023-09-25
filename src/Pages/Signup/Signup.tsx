@@ -30,151 +30,87 @@ const Signup = () => {
     setShowCurrentPassword(!showCurrentPassword);
   };
   return (
-    <View style={{ flex: 1, backgroundColor: "#FFFD8C" }}>
-      <View
-        style={{
-          // flex: 1,
-          justifyContent: "flex-start",
-          marginTop: 30,
-          paddingHorizontal: 40,
-          backgroundColor: "white",
-          flexDirection: "row",
-          alignItems: "center",
-        }}
-      >
-        <TouchableOpacity onPress={goToBack}>
-          <Icon name="left" type="antdesign" size={30}></Icon>
-        </TouchableOpacity>
-        <View
-          style={{
-            marginTop: 20,
-            paddingLeft: 20,
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+    <View style={styles.page}>
+      <View style={styles.container1}>
+        <View style={styles.title}>
+          <TouchableOpacity
+            onPress={goToBack}
+            style={{ justifyContent: "center" }}
+          >
+            <Icon
+              name="left"
+              type="antdesign"
+              size={25}
+              style={{ paddingHorizontal: 10 }}
+            ></Icon>
+          </TouchableOpacity>
           <Text style={{ paddingVertical: 5, fontSize: 30, fontWeight: 200 }}>
             Sign Up
           </Text>
-
-          <Text style={{ paddingBottom: 30 }}>Register and Eat</Text>
         </View>
+        <Text style={styles.subtitle}>Register and Eat</Text>
       </View>
-      <View style={{ backgroundColor: "gray" }}>
-        <Text> </Text>
-      </View>
-      <View
-        style={{
-          justifyContent: "center",
-          flexDirection: "row",
-        }}
-      >
-        <View
-          style={{
-            alignItems: "center",
-            marginVertical: 20,
-            borderWidth: 1,
-            width: 110,
-            height: 110,
-            borderRadius: 110,
-            borderStyle: "dashed",
-            justifyContent: "center",
-          }}
-        >
-          <View style={{}}>
+      <View style={styles.container2}>
+        <View style={styles.border}>
+          <TextInput
+            textAlign="center"
+            style={styles.borderinput}
+            placeholder="Add Photo "
+          />
+        </View>
+        <View>
+          <Text style={styles.label}>Full Name</Text>
+          <TextInput
+            textAlign="left"
+            style={styles.input}
+            placeholder="Type your full name "
+          />
+          <Text style={styles.label}>Email Address</Text>
+          <TextInput
+            textAlign="left"
+            style={styles.input}
+            placeholder="Enter your email"
+          />
+          <Text style={styles.label}>Password</Text>
+          <View style={styles.input}>
             <TextInput
-              textAlign="center"
-              style={{
-                width: 90,
-                height: 90,
-                borderRadius: 50,
-                // borderWidth: 1,
-                backgroundColor: "white",
-                padding: 15,
-              }}
-              placeholder="Add Photo "
+              secureTextEntry={!showPassword}
+              textAlign="left"
+              placeholder="Password"
             />
+            <TouchableOpacity onPress={togglePasswordVisibility}>
+              <Icon
+                name={showPassword ? "eye" : "eye-with-line"}
+                type="entypo"
+                size={20}
+                color={"gray"}
+              />
+            </TouchableOpacity>
           </View>
-        </View>
-      </View>
-
-      <View style={styles.container}></View>
-      <View style={{ marginVertical: 15, marginHorizontal: 40 }}>
-        <Text style={{ fontSize: 18 }}>Full Name</Text>
-      </View>
-      <View style={styles.container}>
-        <TextInput
-          textAlign="left"
-          style={styles.input}
-          placeholder="Type your full name "
-        />
-      </View>
-      <View style={{ marginVertical: 15, marginHorizontal: 40 }}>
-        <Text style={{ fontSize: 18 }}>Email Address</Text>
-      </View>
-      <View style={styles.container}>
-        <TextInput
-          textAlign="left"
-          style={styles.input}
-          placeholder="Enter your email"
-        />
-      </View>
-      <View style={{ marginVertical: 15, marginHorizontal: 40 }}>
-        <Text style={{ fontSize: 18 }}>Password</Text>
-      </View>
-      <View style={styles.container}>
-        <View style={styles.input}>
-          <TextInput
-            secureTextEntry={!showPassword}
-            textAlign="left"
-            placeholder="Password"
-          />
-          <TouchableOpacity onPress={togglePasswordVisibility}>
-            <Icon
-              name={showPassword ? "eye" : "eye-with-line"}
-              type="entypo"
-              size={20}
-              color={"gray"}
+          <Text style={styles.label}>Current Password</Text>
+          <View style={styles.input}>
+            <TextInput
+              secureTextEntry={!showCurrentPassword}
+              textAlign="left"
+              placeholder="Password"
             />
+            <TouchableOpacity onPress={toggleCurrentPasswordVisibility}>
+              <Icon
+                name={showCurrentPassword ? "eye" : "eye-with-line"}
+                type="entypo"
+                size={20}
+                color={"gray"}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <TouchableOpacity onPress={goToAddress}>
+            <View style={styles.button}>
+              <Text>Continue</Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>
-      <View style={{ marginVertical: 10, marginHorizontal: 40 }}>
-        <Text style={{ fontSize: 18 }}>Current Password</Text>
-      </View>
-      <View style={styles.container}>
-        <View style={styles.input}>
-          <TextInput
-            secureTextEntry={!showCurrentPassword}
-            textAlign="left"
-            placeholder="Password"
-          />
-          <TouchableOpacity onPress={toggleCurrentPasswordVisibility}>
-            <Icon
-              name={showCurrentPassword ? "eye" : "eye-with-line"}
-              type="entypo"
-              size={20}
-              color={"gray"}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <TouchableOpacity onPress={goToAddress}>
-        <View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            marginVertical: 20,
-            marginHorizontal: 40,
-            height: 40,
-            backgroundColor: "orange",
-            borderRadius: 5,
-          }}
-        >
-          <Text>Continue</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -182,11 +118,47 @@ const Signup = () => {
 export default Signup;
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 40,
-    flexDirection: "row",
+  border: {
     alignItems: "center",
+    marginVertical: 20,
+    borderWidth: 1,
+    width: 110,
+    height: 110,
+    borderRadius: 110,
+    borderStyle: "dashed",
+    justifyContent: "center",
   },
+
+  borderinput: {
+    width: 90,
+    height: 90,
+    borderRadius: 50,
+    backgroundColor: "white",
+    padding: 20,
+  },
+
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFC700",
+    padding: 12,
+    marginVertical: 20,
+    borderRadius: 8,
+  },
+
+  container1: {
+    backgroundColor: "white",
+    paddingHorizontal: 24,
+    paddingTop: 30,
+    paddingBottom: 24,
+  },
+  container2: {
+    marginTop: 20,
+    alignItems: "center",
+    flex: 1,
+    backgroundColor: "white",
+  },
+
   input: {
     width: 400,
     alignItems: "center",
@@ -199,5 +171,25 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     justifyContent: "space-between",
     paddingHorizontal: 20,
+  },
+
+  label: {
+    fontSize: 14,
+    paddingVertical: 10,
+    color: "#020202",
+  },
+
+  page: { flex: 1 },
+
+  title: {
+    fontSize: 22,
+    color: "#020202",
+    flexDirection: "row",
+  },
+
+  subtitle: {
+    fontSize: 14,
+    color: "#8D92A3",
+    paddingHorizontal: 50,
   },
 });

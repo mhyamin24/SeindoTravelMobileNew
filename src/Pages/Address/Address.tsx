@@ -6,119 +6,119 @@ import {
   StyleSheet,
 } from "react-native";
 import { Icon } from "@rneui/base";
-import React, { useState } from "react";
+import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import Select from "../../Components/Select";
 
-const Signup = () => {
+const Address = () => {
   const navigation = useNavigation();
 
   const goToBack = () => {
     navigation.navigate("Login");
   };
 
-  const goToLoginsuccesPage = () => {
-    navigation.navigate("Loginsucces");
+  const goToAddress = () => {
+    navigation.navigate("Address");
   };
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-  const toggleCurrentPasswordVisibility = () => {
-    setShowCurrentPassword(!showCurrentPassword);
-  };
   return (
-    <View style={{ flex: 1, backgroundColor: "#FFFD8C" }}>
-      <View
-        style={{
-          // flex: 1,
-          justifyContent: "flex-start",
-          marginTop: 30,
-          paddingHorizontal: 40,
-          backgroundColor: "white",
-          flexDirection: "row",
-          alignItems: "center",
-        }}
-      >
-        <TouchableOpacity onPress={goToBack}>
-          <Icon name="left" type="antdesign" size={30}></Icon>
-        </TouchableOpacity>
-        <View
-          style={{
-            marginTop: 20,
-            paddingLeft: 20,
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+    <View style={styles.page}>
+      <View style={styles.container1}>
+        <View style={styles.title}>
+          <TouchableOpacity
+            onPress={goToBack}
+            style={{ justifyContent: "center" }}
+          >
+            <Icon
+              name="left"
+              type="antdesign"
+              size={25}
+              style={{ paddingHorizontal: 10 }}
+            ></Icon>
+          </TouchableOpacity>
           <Text style={{ paddingVertical: 5, fontSize: 30, fontWeight: 200 }}>
             Address
           </Text>
+        </View>
+        <Text style={styles.subtitle}>Make sure it's valid</Text>
+      </View>
+      <View style={styles.container2}>
+        <View style={{ marginTop: 30 }}>
+          <Text style={styles.label}>Phone No</Text>
+          <TextInput
+            textAlign="left"
+            style={styles.input}
+            placeholder="Type your phone number "
+          />
+          <Text style={styles.label}>Address</Text>
+          <TextInput
+            textAlign="left"
+            style={styles.input}
+            placeholder="Type Your Address"
+          />
+          <Text style={styles.label}>House No</Text>
+          <View style={styles.input}>
+            <TextInput textAlign="left" placeholder="Your House Number" />
+          </View>
+          <Select />
 
-          <Text style={{ paddingBottom: 30 }}>Make sure it's Valid</Text>
+          <TouchableOpacity onPress={goToAddress}>
+            <View style={styles.button}>
+              <Text>Sign Up Now</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
-      <View style={{ backgroundColor: "gray" }}>
-        <Text> </Text>
-      </View>
-
-      <View style={styles.container}></View>
-      <View style={{ marginVertical: 15, marginHorizontal: 40 }}>
-        <Text style={{ fontSize: 18 }}>Phone Number </Text>
-      </View>
-      <View style={styles.container}>
-        <TextInput textAlign="left" style={styles.input} placeholder="+62 " />
-      </View>
-      <View style={{ marginVertical: 15, marginHorizontal: 40 }}>
-        <Text style={{ fontSize: 18 }}> Address</Text>
-      </View>
-      <View style={styles.container}>
-        <TextInput
-          textAlign="left"
-          style={styles.input}
-          placeholder="Your address"
-        />
-      </View>
-      <View style={{ marginVertical: 15, marginHorizontal: 40 }}>
-        <Text style={{ fontSize: 18 }}>House No</Text>
-      </View>
-      <View style={styles.container}>
-        <View style={styles.input}>
-          <TextInput textAlign="left" placeholder=" House number" />
-        </View>
-      </View>
-      <Select />
-
-      <TouchableOpacity onPress={goToLoginsuccesPage}>
-        <View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            marginVertical: 20,
-            marginHorizontal: 40,
-            height: 40,
-            backgroundColor: "orange",
-            borderRadius: 5,
-          }}
-        >
-          <Text>Sign Up Now</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };
 
-export default Signup;
+export default Address;
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 40,
-    flexDirection: "row",
+  border: {
     alignItems: "center",
+    marginVertical: 20,
+    borderWidth: 1,
+    width: 110,
+    height: 110,
+    borderRadius: 110,
+    borderStyle: "dashed",
+    justifyContent: "center",
   },
+
+  borderinput: {
+    width: 90,
+    height: 90,
+    borderRadius: 50,
+    // borderWidth: 1,
+    backgroundColor: "white",
+    padding: 15,
+  },
+
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFC700",
+    padding: 12,
+    marginVertical: 30,
+    borderRadius: 8,
+  },
+
+  container1: {
+    backgroundColor: "white",
+    paddingHorizontal: 24,
+    paddingTop: 30,
+    paddingBottom: 24,
+  },
+  container2: {
+    marginTop: 20,
+    alignItems: "center",
+    // flexDirection: "row",
+    flex: 1,
+    backgroundColor: "white",
+  },
+
   input: {
     width: 400,
     alignItems: "center",
@@ -131,5 +131,25 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     justifyContent: "space-between",
     paddingHorizontal: 20,
+  },
+
+  label: {
+    fontSize: 14,
+    paddingVertical: 20,
+    color: "#020202",
+  },
+
+  page: { flex: 1 },
+
+  title: {
+    fontSize: 22,
+    color: "#020202",
+    flexDirection: "row",
+  },
+
+  subtitle: {
+    fontSize: 14,
+    color: "#8D92A3",
+    paddingHorizontal: 50,
   },
 });

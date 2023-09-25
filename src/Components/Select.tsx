@@ -5,14 +5,12 @@ import { Picker } from "@react-native-community/picker";
 const Select = () => {
   return (
     <View>
-      <View style={{ marginVertical: 15, marginHorizontal: 40 }}>
-        <Text style={{ fontSize: 18 }}>Select</Text>
-        <View style={styles.input}>
-          <Picker>
-            <Picker.Item label="Ambon" value="ambon" />
-            <Picker.Item label="Aceh" value="aceh" />
-          </Picker>
-        </View>
+      <Text style={styles.label}>Select</Text>
+      <View style={styles.input}>
+        <Picker style={styles.picker}>
+          <Picker.Item label="Ambon" value="ambon" />
+          <Picker.Item label="Aceh" value="aceh" />
+        </Picker>
       </View>
     </View>
   );
@@ -28,8 +26,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "white",
     borderWidth: 1,
-    paddingLeft: 3,
     justifyContent: "center",
-    paddingHorizontal: 10,
   },
+
+  label: {
+    fontSize: 14,
+    paddingVertical: 20,
+    color: "#020202",
+  },
+
+  picker: { justifyContent: "center", alignItems: "center" },
 });
