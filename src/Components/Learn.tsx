@@ -35,14 +35,12 @@ const Learn = () => {
           Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend
           condimentum id viverra nulla.
         </Text>
-        {/* <View style></View> */}
       </View>
       <View
         style={{
-          borderColor: "gray", // Warna border
-          borderRadius: 10, // Sudut border
+          borderColor: "gray",
+          borderRadius: 10,
           marginVertical: 10,
-          // marginTop: 20,
           elevation: 1,
           marginHorizontal: 68,
         }}
@@ -93,8 +91,6 @@ const Learn = () => {
                 width: 50,
                 height: 50,
                 borderRadius: 50,
-                // paddingRight: 50,
-                // justifyContent: "flex-start",
               }}
             />
             <View

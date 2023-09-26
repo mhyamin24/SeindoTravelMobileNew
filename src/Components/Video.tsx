@@ -7,7 +7,6 @@ const Video = () => {
       style={{
         flex: 1,
         backgroundColor: "white",
-        // marginTop: 10,
         paddingTop: 30,
         alignItems: "center",
       }}
@@ -76,8 +75,6 @@ const Video = () => {
                 width: 50,
                 height: 50,
                 borderRadius: 50,
-                // paddingRight: 50,
-                // justifyContent: "flex-start",
               }}
             />
             <View

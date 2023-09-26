@@ -24,12 +24,7 @@ export default function Home() {
   return (
     <View>
       <ScrollView>
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: "#FFFD8C",
-          }}
-        >
+        <View style={styles.page}>
           <Menu />
           <View
             style={{
@@ -96,44 +91,19 @@ export default function Home() {
             </View>
           </View>
           <TouchableOpacity onPress={() => Subscribe()}>
-            <View
-              style={{
-                flexDirection: "row",
-                backgroundColor: "#EF6262",
-                marginHorizontal: 70,
-                height: 40,
-                borderRadius: 5,
-                // marginTop: 20,
-                justifyContent: "center",
-                alignItems: "center",
-                elevation: 5,
-              }}
-            >
+            <View style={styles.buttonsubscribe}>
               <Text>Subscribe</Text>
             </View>
           </TouchableOpacity>
-          <View
-            style={{
-              marginTop: 10,
-              alignItems: "center",
-              justifyContent: "center",
-              paddingHorizontal: 35,
-
-              // marginHorizontal: 10,
-            }}
-          >
+          <View style={styles.buttonterm}>
             <Text>
               Subscribe to get catalog information and other interesting
               promotion
             </Text>
-            <TouchableOpacity
-              style={{
-                paddingLeft: 5,
-                marginBottom: 10,
-                pointerEvents: "auto",
-              }}
-            >
-              <Text style={{ color: "white" }}>term of service</Text>
+            <TouchableOpacity style={styles.button}>
+              <Text style={{ color: "black", fontWeight: "bold" }}>
+                term of service
+              </Text>
             </TouchableOpacity>
           </View>
           <Learn />
@@ -152,8 +122,26 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     elevation: 3,
     alignItems: "center",
-    // padding: 30,
   },
+  button: { paddingLeft: 5, marginBottom: 10, pointerEvents: "auto" },
+  buttonsubscribe: {
+    flexDirection: "row",
+    backgroundColor: "#EF6262",
+    marginHorizontal: 70,
+    height: 40,
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 5,
+  },
+
+  buttonterm: {
+    marginTop: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 35,
+  },
+
   input: {
     width: 340,
     height: 45,
@@ -161,7 +149,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderWidth: 1,
     paddingLeft: 10,
-
-    // paddingHorizontal: 120,
   },
+  page: { flex: 1, backgroundColor: "#FFFD8C" },
 });

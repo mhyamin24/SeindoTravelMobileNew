@@ -21,38 +21,22 @@ const FoodDetails = () => {
     <View style={styles.page}>
       <ImageBackground
         source={require("../../../assets/PageFood/food5.png")}
-        style={{
-          width: 480,
-          height: 300,
-          borderTopLeftRadius: 20,
-          //   marginHorizontal: 50,
-
-          //   margin: 0,
-        }}
+        style={styles.imagebg}
       >
         <TouchableOpacity style={{}}>
           <Icon
             name="left"
             type="antdesign"
             size={25}
-            style={{
-              justifyContent: "center",
-              alignItems: "flex-start",
-              //   backgroundColor: "yellow",
-              marginTop: "auto",
-              padding: 20,
-            }}
+            style={styles.icon}
           ></Icon>
         </TouchableOpacity>
-        {/* <Text>Hallow</Text> */}
       </ImageBackground>
       <View style={styles.container}>
         <View style={styles.mainContent}>
           <View style={styles.productContainer}>
             <View>
-              <Text style={{ fontSize: 19, color: "#020202" }}>
-                Cherry Healthy
-              </Text>
+              <Text style={styles.title}>Cherry Healthy</Text>
               <View style={{ flexDirection: "row" }}>
                 <Image
                   source={require("../../../assets/PageFood/StarOn.png")}
@@ -74,15 +58,7 @@ const FoodDetails = () => {
                   source={require("../../../assets/PageFood/StarOff.png")}
                   style={styles.imagefood}
                 />
-                <Text
-                  style={{
-                    fontSize: 19,
-                    paddingHorizontal: 6,
-                    justifyContent: "center",
-                  }}
-                >
-                  4.5
-                </Text>
+                <Text style={styles.labelrate}>4.5</Text>
               </View>
             </View>
             <Counter />
@@ -102,30 +78,14 @@ const FoodDetails = () => {
             <Text style={styles.labelTotal}>Total Price :</Text>
             <Text style={styles.priceTotal}>IDR 12.289.000</Text>
           </View>
-          {/* <View style={styles.button}> */}
           <TouchableOpacity
             style={{ justifyContent: "center" }}
             onPress={goToOrderSummary}
           >
-            <View
-              style={{
-                // flexDirection: "row",
-                backgroundColor: "#FFC700",
-                // marginHorizontal: 70,
-                height: 50,
-                width: 163,
-                borderRadius: 5,
-
-                // marginTop: 20,
-                justifyContent: "center",
-                alignItems: "center",
-                elevation: 2,
-              }}
-            >
+            <View style={styles.button}>
               <Text>Order Now</Text>
             </View>
           </TouchableOpacity>
-          {/* </View> */}
         </View>
       </View>
     </View>
@@ -135,22 +95,16 @@ const FoodDetails = () => {
 export default FoodDetails;
 
 const styles = StyleSheet.create({
-  page: { flex: 1 },
-
-  desc: { fontSize: 19, color: "#8D92A3", marginBottom: 16 },
-
-  label: { fontSize: 19, color: "#020202", marginBottom: 4 },
-
-  labelTotal: { fontSize: 19, color: "#8D92A3" },
-
-  priceTotal: { fontSize: 24, color: "#020202" },
-
-  price: { flex: 1 },
-  mainContent: { flex: 1 },
-  imagefood: {
-    width: 19,
-    height: 19,
+  button: {
+    backgroundColor: "#FFC700",
+    height: 50,
+    width: 163,
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 2,
   },
+
   container: {
     backgroundColor: "white",
     borderTopRightRadius: 40,
@@ -160,15 +114,54 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     flex: 1,
   },
+
+  desc: { fontSize: 19, color: "#8D92A3", marginBottom: 16 },
+
+  footer: {
+    flexDirection: "row",
+    marginBottom: 20,
+    paddingVertical: 16,
+  },
+
+  icon: { width: 480, height: 300, borderTopLeftRadius: 20 },
+
+  imagebg: { width: 480, height: 300, borderTopLeftRadius: 20 },
+
+  imagefood: {
+    width: 19,
+    height: 19,
+  },
+
+  label: { fontSize: 19, color: "#020202", marginBottom: 4 },
+
+  labelrate: {
+    fontSize: 15,
+    paddingHorizontal: 6,
+    justifyContent: "center",
+    color: "gray",
+  },
+
+  labelTotal: { fontSize: 19, color: "#8D92A3" },
+
+  mainContent: { flex: 1 },
+
+  page: { flex: 1 },
+
+  price: { flex: 1 },
+
+  priceTotal: { fontSize: 24, color: "#020202" },
+
   productContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 14,
   },
-  footer: {
-    flexDirection: "row",
-    marginBottom: 20,
-    paddingVertical: 16,
+
+  title: {
+    fontSize: 15,
+    paddingHorizontal: 6,
+    justifyContent: "center",
+    color: "gray",
   },
 });

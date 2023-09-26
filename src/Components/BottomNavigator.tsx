@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
 const Pict = ({ label, focus }) => {
@@ -71,7 +71,6 @@ const BottomNavigator = ({ state, descriptors, navigation }) => {
           });
 
           if (!isFocused && !event.defaultPrevented) {
-            // The `merge: true` option makes sure that the params inside the tab screen are preserved
             navigation.navigate({ name: route.name, merge: true });
           }
         };
@@ -92,10 +91,8 @@ const BottomNavigator = ({ state, descriptors, navigation }) => {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            // style={{ flex: 1 }}
           >
             <Pict label={label} focus={isFocused} />
-            {/* <Text>{label}</Text> */}
           </TouchableOpacity>
         );
       })}

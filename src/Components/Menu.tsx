@@ -51,7 +51,6 @@ function Menu() {
               style={{
                 paddingHorizontal: 150,
                 borderRadius: 10,
-                // marginHorizontal: 150,
                 elevation: 5,
                 backgroundColor: "white",
               }}
@@ -59,9 +58,7 @@ function Menu() {
               <View style={{ paddingVertical: 10, marginRight: 10 }}>
                 <View
                   style={{
-                    // flex: 1,
                     flexDirection: "row",
-                    // alignItems: "center",
                     justifyContent: "space-between",
                   }}
                 >
@@ -144,7 +141,6 @@ function Menu() {
                   style={{
                     color: "white",
                     fontWeight: "500",
-                    // marginHorizontal: 50,
                   }}
                 >
                   Start Trial

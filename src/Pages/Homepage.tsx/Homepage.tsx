@@ -9,8 +9,6 @@ import {
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-// import PagerView from "react-native-pager-view";
-// import { SceneMap, TabBar, TabView } from "react-native-tab-view";
 import HomeTabSection from "../../Components/HomeTabSection";
 
 const Homepage = () => {
@@ -30,7 +28,6 @@ const Homepage = () => {
           </TouchableOpacity>
           <Text style={{ paddingBottom: 20 }}>Let's get some foods</Text>
         </View>
-        {/* <View></View> */}
         <Image
           source={require("../../../assets/profileimg.png")}
           style={{

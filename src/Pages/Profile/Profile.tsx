@@ -1,132 +1,31 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
-import { Icon } from "@rneui/base";
+import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { SceneMap, TabView } from "react-native-tab-view";
+import ProfileTabSection from "../../Components/ProfileTabSection";
 
 const Profile = () => {
   console.log = (props: any) => {};
   const navigation = useNavigation();
 
-  const [showView1, setShowView1] = useState(true);
-  const [showView2, setShowView2] = useState(false);
-
-  const toggleView1 = () => {
-    setShowView1(true);
-  };
-
-  const toggleView2 = () => {
-    setShowView2(false);
-  };
-
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <View style={styles.profile}>
-        <View
-          style={{
-            justifyContent: "center",
-            flexDirection: "row",
-          }}
-        >
-          <View
-            style={{
-              alignItems: "center",
-              marginVertical: 20,
-              borderWidth: 1,
-              width: 110,
-              height: 110,
-              borderRadius: 110,
-              borderStyle: "dashed",
-              justifyContent: "center",
-            }}
-          >
+        <View style={styles.header}>
+          <View style={styles.borderimage}>
             <Image
               source={require("../../../assets/profileimg.png")}
-              style={{
-                width: 90,
-                height: 90,
-                borderRadius: 90,
-                marginVertical: 17,
-              }}
+              style={styles.imageprofile}
             />
           </View>
         </View>
 
         <Text style={{ fontSize: 18, fontWeight: "normal" }}>Angga Risky</Text>
-        <Text style={{ paddingBottom: 14, color: "#8D92A3" }}>
+        <Text style={{ paddingBottom: 28, color: "#8D92A3" }}>
           wepanda@gmail.com
         </Text>
-
-        <View style={styles.account}></View>
       </View>
-      <View style={styles.container}>
-        <View
-          style={{
-            flexDirection: "row",
-            paddingVertical: 20,
-          }}
-        >
-          <TouchableOpacity onPress={toggleView1}>
-            <Text
-              style={[
-                styles.activeText,
-                showView1 ? styles.activeText : styles.inactiveText,
-              ]}
-            >
-              Account
-            </Text>
-          </TouchableOpacity>
-          <View>
-            <TouchableOpacity onPress={toggleView2}>
-              <Text
-                style={[
-                  styles.inactiveText,
-                  !showView1 ? styles.activeText : styles.inactiveText,
-                ]}
-              >
-                Food Market
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <View style={{ paddingVertical: 10 }}>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <Text style={{ paddingVertical: 10 }}>Edit Profile</Text>
-            <TouchableOpacity>
-              <Icon name="chevron-small-right" type="entypo" size={30} />
-            </TouchableOpacity>
-          </View>
-
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <Text style={{ paddingVertical: 10 }}>Home Address</Text>
-            <TouchableOpacity>
-              <Icon name="chevron-small-right" type="entypo" size={30} />
-            </TouchableOpacity>
-          </View>
-
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <Text style={{ paddingVertical: 10 }}>Security</Text>
-            <TouchableOpacity>
-              <Icon name="chevron-small-right" type="entypo" size={30} />
-            </TouchableOpacity>
-          </View>
-
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <Text style={{ paddingVertical: 10 }}>Payments</Text>
-            <TouchableOpacity>
-              <Icon name="chevron-small-right" type="entypo" size={30} />
-            </TouchableOpacity>
-          </View>
-        </View>
+      <View style={{ flex: 1, paddingTop: 20 }}>
+        <ProfileTabSection />
       </View>
     </View>
   );
@@ -135,27 +34,24 @@ const Profile = () => {
 export default Profile;
 
 const styles = StyleSheet.create({
-  container: {
-    marginVertical: 20,
-    backgroundColor: "white",
+  borderimage: {
+    alignItems: "center",
+    marginVertical: 10,
+    borderWidth: 1,
+    width: 110,
+    height: 110,
+    borderRadius: 110,
+    borderStyle: "dashed",
     justifyContent: "center",
-    paddingHorizontal: 30,
   },
 
-  activeText: {
-    fontSize: 15,
-    color: "#020202",
-  },
+  header: { flexDirection: "row" },
 
-  inactiveText: { fontSize: 15, paddingLeft: 30, color: "#8D92A3" },
+  imageprofile: { width: 90, height: 90, borderRadius: 90 },
 
   profile: {
-    justifyContent: "center",
     alignItems: "center",
+    paddingTop: 20,
     backgroundColor: "white",
-  },
-  account: {
-    backgroundColor: "white",
-    marginHorizontal: 20,
   },
 });
