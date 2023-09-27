@@ -1,11 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Dimensions,
-  Image,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, Text, View, Dimensions, ScrollView } from "react-native";
 import React from "react";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
 import ListFood from "./ListFood";

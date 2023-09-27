@@ -1,69 +1,43 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { useNavigation } from "@react-navigation/native";
+import OrderTab from "../../Components/OrderTab";
 
 const Order = () => {
-  const navigation = useNavigation();
-
-  const goToMainApp = () => {
-    navigation.navigate("MainApp");
-  };
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "white",
-      }}
-    >
-      <StatusBar style="auto" />
-      <View
-        style={{
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Image
-          source={require("../../../assets/PageFood/orderpict.png")}
-          style={{ width: 200, height: 221 }}
-        ></Image>
-        <Text
-          style={{
-            fontSize: 20,
-            fontWeight: "bold",
-            paddingTop: 30,
-            paddingBottom: 6,
-          }}
-        >
-          Ouch! Hungry
-        </Text>
-        <Text style={{ fontSize: 20, color: "#8D92A3" }}>
-          Seems like you have not
-        </Text>
-        <Text style={{ fontSize: 20, color: "#8D92A3" }}>
-          ordered any food yet
-        </Text>
-      </View>
-      <TouchableOpacity onPress={goToMainApp}>
-        <View
-          style={{
-            marginTop: 30,
-            backgroundColor: "#FFC700",
-            paddingVertical: 15,
-            paddingHorizontal: 100,
-            borderRadius: 10,
-            elevation: 3,
-          }}
-        >
-          <Text style={{ fontWeight: "normal" }}>Find Foods</Text>
+    <View style={{ flex: 1 }}>
+      <View style={styles.container1}>
+        <View style={styles.title}>
+          <Text style={{ paddingVertical: 5, fontSize: 30, fontWeight: 200 }}>
+            Your Orders
+          </Text>
         </View>
-      </TouchableOpacity>
+        <Text style={styles.subtitle}>Wait for the best meal</Text>
+      </View>
+      <View style={{ flex: 1, paddingTop: 20 }}>
+        <OrderTab />
+      </View>
     </View>
   );
 };
 
 export default Order;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container1: {
+    backgroundColor: "white",
+    paddingHorizontal: 24,
+    paddingTop: 30,
+    paddingBottom: 24,
+  },
+
+  title: {
+    fontSize: 22,
+    color: "#020202",
+    flexDirection: "row",
+  },
+  subtitle: {
+    fontSize: 14,
+    color: "#8D92A3",
+    // paddingHorizontal: 50,
+  },
+});

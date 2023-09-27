@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { Icon } from "@rneui/base";
-// import LinearGradient from "react-native-linear-gradient";
 
 const Help = () => {
   return (

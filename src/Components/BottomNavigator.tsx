@@ -7,36 +7,36 @@ const Pict = ({ label, focus }) => {
       return focus ? (
         <Image
           source={require("../../assets/BottomNavigator/HomeOn.png")}
-          style={{ width: 25, height: 32 }}
+          style={{ width: 32, height: 32 }}
         />
       ) : (
         <Image
           source={require("../../assets/BottomNavigator/HomeOff.png")}
-          style={{ width: 25, height: 32 }}
+          style={{ width: 32, height: 32 }}
         />
       );
     case "Order":
       return focus ? (
         <Image
           source={require("../../assets/BottomNavigator/OrderOn.png")}
-          style={{ width: 25, height: 32 }}
+          style={{ width: 32, height: 32 }}
         />
       ) : (
         <Image
           source={require("../../assets/BottomNavigator/OrderOff.png")}
-          style={{ width: 25, height: 32 }}
+          style={{ width: 32, height: 32 }}
         />
       );
     case "Profile":
       return focus ? (
         <Image
           source={require("../../assets/BottomNavigator/ProfileOn.png")}
-          style={{ width: 25, height: 32 }}
+          style={{ width: 32, height: 32 }}
         />
       ) : (
         <Image
           source={require("../../assets/BottomNavigator/ProfileOff.png")}
-          style={{ width: 25, height: 32 }}
+          style={{ width: 32, height: 32 }}
         />
       );
     default:
