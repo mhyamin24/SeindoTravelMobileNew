@@ -8,7 +8,7 @@ import Signup from "./src/Pages/Signup/Signup";
 import Loginsucces from "./src/Pages/Loginsucces/Loginsucces";
 import Address from "./src/Pages/Address/Address";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Homepage from "./src/Pages/Homepage.tsx/Homepage";
+import Homepage from "./src/Pages/Homepage/Homepage";
 import Order from "./src/Pages/Order/Order";
 import Profile from "./src/Pages/Profile/Profile";
 import BottomNavigator from "./src/Components/BottomNavigator";

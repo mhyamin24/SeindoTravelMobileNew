@@ -6,11 +6,11 @@ const SuccesOrder = () => {
   const navigation = useNavigation();
 
   const goToHomepage = () => {
-    navigation.navigate("Homepage");
+    navigation.navigate("MainApp");
   };
 
-  const goToPayment = () => {
-    navigation.navigate("Payment");
+  const goToOrder = () => {
+    navigation.navigate("Order");
   };
   return (
     <View style={styles.container}>
@@ -47,7 +47,7 @@ const SuccesOrder = () => {
           <Text style={{ color: "#020202" }}>Order Other Foods</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={goToPayment}>
+      <TouchableOpacity onPress={goToOrder}>
         <View
           style={{
             marginTop: 20,

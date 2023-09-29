@@ -1,7 +1,12 @@
 import { StyleSheet, Text, View, Dimensions, ScrollView } from "react-native";
 import React from "react";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import ListFood from "./ListFood";
+import ListFood1 from "./ListFood/ListFood1";
+import ListFood2 from "./ListFood/ListFood2";
+import ListFood3 from "./ListFood/ListFood3";
+import ListFood4 from "./ListFood/ListFood4";
+import ListFood5 from "./ListFood/ListFood5";
+import ListFood6 from "./ListFood/ListFood6";
 
 const renderTabBar = (props) => (
   <TabBar
@@ -25,12 +30,12 @@ const renderTabBar = (props) => (
 const NewTaste = () => (
   <ScrollView>
     <View style={{ paddingTop: 10 }}>
-      <ListFood />
-      <ListFood />
-      <ListFood />
-      <ListFood />
-      <ListFood />
-      <ListFood />
+      <ListFood1 />
+      <ListFood2 />
+      <ListFood3 />
+      <ListFood4 />
+      <ListFood5 />
+      <ListFood6 />
     </View>
   </ScrollView>
 );
@@ -38,24 +43,24 @@ const NewTaste = () => (
 const Popular = () => (
   <ScrollView>
     <View style={{ paddingTop: 10 }}>
-      <ListFood />
-      <ListFood />
-      <ListFood />
-      <ListFood />
-      <ListFood />
-      <ListFood />
+      <ListFood2 />
+      <ListFood4 />
+      <ListFood5 />
+      <ListFood6 />
+      <ListFood1 />
+      <ListFood3 />
     </View>
   </ScrollView>
 );
 const Recommended = () => (
   <ScrollView>
     <View style={{ paddingTop: 10 }}>
-      <ListFood />
-      <ListFood />
-      <ListFood />
-      <ListFood />
-      <ListFood />
-      <ListFood />
+      <ListFood4 />
+      <ListFood5 />
+      <ListFood6 />
+      <ListFood3 />
+      <ListFood1 />
+      <ListFood2 />
     </View>
   </ScrollView>
 );

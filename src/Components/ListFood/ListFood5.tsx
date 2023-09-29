@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 
-const ListFood = () => {
+const ListFood5 = () => {
   return (
     <View
       style={{
@@ -12,7 +12,7 @@ const ListFood = () => {
       }}
     >
       <Image
-        source={require("../../assets/PageFood/food2.png")}
+        source={require("../../../assets/PageFood/order1.png")}
         style={{
           width: 70,
           height: 70,
@@ -21,7 +21,7 @@ const ListFood = () => {
         }}
       />
       <View style={{ flex: 1 }}>
-        <Text style={{ fontSize: 20 }}>Soup Bumil</Text>
+        <Text style={{ fontSize: 20 }}>Avosalado</Text>
         <Text style={{ fontSize: 15, color: "#8D92A3" }}>IDR 289.000</Text>
       </View>
       <View
@@ -30,17 +30,17 @@ const ListFood = () => {
           alignItems: "center",
         }}
       >
-        <Image source={require("../../assets/PageFood/StarOn.png")} />
-        <Image source={require("../../assets/PageFood/StarOn.png")} />
-        <Image source={require("../../assets/PageFood/StarOn.png")} />
-        <Image source={require("../../assets/PageFood/StarOn.png")} />
-        <Image source={require("../../assets/PageFood/StarOff.png")} />
+        <Image source={require("../../../assets/PageFood/StarOn.png")} />
+        <Image source={require("../../../assets/PageFood/StarOn.png")} />
+        <Image source={require("../../../assets/PageFood/StarOn.png")} />
+        <Image source={require("../../../assets/PageFood/StarOn.png")} />
+        <Image source={require("../../../assets/PageFood/StarOff.png")} />
         <Text style={{ color: "#8D92A3", paddingHorizontal: 10 }}>4.5</Text>
       </View>
     </View>
   );
 };
 
-export default ListFood;
+export default ListFood5;
 
 const styles = StyleSheet.create({});

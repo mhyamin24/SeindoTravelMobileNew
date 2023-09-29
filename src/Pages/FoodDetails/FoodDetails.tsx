@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
-import { Button, Icon } from "@rneui/base";
+import { Icon } from "@rneui/base";
 import Counter from "../../Components/Counter";
 import { useNavigation } from "@react-navigation/native";
 
