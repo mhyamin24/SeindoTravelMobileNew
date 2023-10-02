@@ -8,6 +8,7 @@ import {
 import React from "react";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
 import { Icon } from "@rneui/base";
+import { useNavigation } from "@react-navigation/native";
 
 const renderTabBar = (props) => (
   <TabBar
@@ -132,6 +133,12 @@ const FoodMarket = () => (
 const initialLayout = { width: Dimensions.get("window").width };
 
 const ProfileTabSection = () => {
+  const navigation = useNavigation();
+
+  const Address = () => {
+    navigation.navigate("Address");
+  };
+
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     { key: "1", title: "Account" },

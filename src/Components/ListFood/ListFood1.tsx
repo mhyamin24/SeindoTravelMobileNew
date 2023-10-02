@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
 const ListFood1 = () => {
@@ -11,18 +11,22 @@ const ListFood1 = () => {
         paddingVertical: 8,
       }}
     >
-      <Image
-        source={require("../../../assets/PageFood/food2.png")}
-        style={{
-          width: 70,
-          height: 70,
-          marginHorizontal: 20,
-          borderRadius: 10,
-        }}
-      />
+      <TouchableOpacity>
+        <Image
+          source={require("../../../assets/PageFood/food2.png")}
+          style={{
+            width: 70,
+            height: 70,
+            marginHorizontal: 20,
+            borderRadius: 10,
+          }}
+        />
+      </TouchableOpacity>
       <View style={{ flex: 1 }}>
-        <Text style={{ fontSize: 20 }}>Soup Bumil</Text>
-        <Text style={{ fontSize: 15, color: "#8D92A3" }}>IDR 289.000</Text>
+        <TouchableOpacity>
+          <Text style={{ fontSize: 20 }}>Soup bumil</Text>
+          <Text style={{ fontSize: 15, color: "#8D92A3" }}>IDR 289.000</Text>
+        </TouchableOpacity>
       </View>
       <View
         style={{

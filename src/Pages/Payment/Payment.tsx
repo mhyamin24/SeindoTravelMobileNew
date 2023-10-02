@@ -21,16 +21,7 @@ const Payment = () => {
     <ScrollView>
       <View>
         <View>
-          <View
-            style={{
-              justifyContent: "flex-start",
-              marginTop: 30,
-              paddingHorizontal: 40,
-              backgroundColor: "white",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
+          <View style={styles.page}>
             <View>
               <TouchableOpacity>
                 <Icon name="left" type="antdesign" size={30}></Icon>
@@ -41,7 +32,6 @@ const Payment = () => {
                 marginTop: 20,
                 paddingLeft: 20,
                 flexDirection: "column",
-                // alignItems: "center",
               }}
             >
               <Text style={{ fontSize: 25 }}>Payment </Text>
@@ -74,7 +64,6 @@ const Payment = () => {
                     <Text style={styles.label}>IDR. 289.000</Text>
                   </View>
                 </View>
-
                 <Text style={styles.label}>14 Items</Text>
               </View>
             </View>
@@ -234,5 +223,14 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginTop: 20,
     paddingHorizontal: 20,
+  },
+
+  page: {
+    justifyContent: "flex-start",
+    marginTop: 30,
+    paddingHorizontal: 20,
+    backgroundColor: "white",
+    flexDirection: "row",
+    alignItems: "center",
   },
 });

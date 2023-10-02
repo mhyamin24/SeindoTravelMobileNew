@@ -5,7 +5,6 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-  Animated,
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -21,11 +20,9 @@ const Homepage = () => {
     <View style={{ flex: 1 }}>
       <View style={styles.profile}>
         <View>
-          <TouchableOpacity onPress={FoodDetails}>
-            <Text style={{ paddingTop: 10, fontSize: 30, fontWeight: "bold" }}>
-              Food Market
-            </Text>
-          </TouchableOpacity>
+          <Text style={{ paddingTop: 10, fontSize: 30, fontWeight: "bold" }}>
+            Food Market
+          </Text>
           <Text style={{ paddingBottom: 20 }}>Let's get some foods</Text>
         </View>
         <Image
@@ -42,153 +39,163 @@ const Homepage = () => {
       <View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={{ flexDirection: "row" }}>
-            <View style={styles.food}>
-              <Image
-                source={require("../../../assets/PageFood/food1.png")}
-                style={{
-                  paddingHorizontal: 20,
-                  width: 200,
-                  height: 135,
-                }}
-              />
-              <View style={{ padding: 12 }}>
-                <Text style={{ fontSize: 16 }}>Cherry Healthy</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOff.png")}
-                    style={styles.imagefood}
-                  />
-                  <Text style={{}}>4.5</Text>
-                </View>
-              </View>
-            </View>
-            <View style={styles.food}>
-              <Image
-                source={require("../../../assets/PageFood/food2.png")}
-                style={{
-                  paddingHorizontal: 20,
-                  width: 200,
-                  height: 135,
-                }}
-              />
-              <View style={{ padding: 12 }}>
-                <Text style={{ fontSize: 16 }}>Soup Bumil</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOff.png")}
-                    style={styles.imagefood}
-                  />
-                  <Text style={{}}>4.5</Text>
-                </View>
-              </View>
-            </View>
+            <TouchableOpacity onPress={FoodDetails}>
+              <View style={styles.food}>
+                <Image
+                  source={require("../../../assets/PageFood/food1.png")}
+                  style={{
+                    paddingHorizontal: 20,
+                    width: 200,
+                    height: 135,
+                  }}
+                />
 
-            <View style={styles.food}>
-              <Image
-                source={require("../../../assets/PageFood/food3.png")}
-                style={{
-                  paddingHorizontal: 20,
-                  width: 200,
-                  height: 135,
-                }}
-              />
-
-              <View style={{ margin: 12 }}>
-                <Text style={{ fontSize: 16 }}>Chiken</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOff.png")}
-                    style={styles.imagefood}
-                  />
-                  <Text style={{}}>4.5</Text>
+                <View style={{ padding: 12 }}>
+                  <Text style={{ fontSize: 16 }}>Cherry Healthy</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOff.png")}
+                      style={styles.imagefood}
+                    />
+                    <Text style={{}}>4.5</Text>
+                  </View>
                 </View>
               </View>
-            </View>
-            <View style={styles.food}>
-              <Image
-                source={require("../../../assets/PageFood/food4.png")}
-                style={{
-                  paddingHorizontal: 20,
-                  width: 200,
-                  height: 135,
-                }}
-              />
-
-              <View style={{ margin: 12 }}>
-                <Text style={{ fontSize: 16 }}>Shrimp</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOn.png")}
-                    style={styles.imagefood}
-                  />
-                  <Image
-                    source={require("../../../assets/PageFood/StarOff.png")}
-                    style={styles.imagefood}
-                  />
-                  <Text style={{}}>4.5</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <View style={styles.food}>
+                <Image
+                  source={require("../../../assets/PageFood/food2.png")}
+                  style={{
+                    paddingHorizontal: 20,
+                    width: 200,
+                    height: 135,
+                  }}
+                />
+                <View style={{ padding: 12 }}>
+                  <Text style={{ fontSize: 16 }}>Soup Bumil</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOff.png")}
+                      style={styles.imagefood}
+                    />
+                    <Text style={{}}>4.5</Text>
+                  </View>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <View style={styles.food}>
+                <Image
+                  source={require("../../../assets/PageFood/food3.png")}
+                  style={{
+                    paddingHorizontal: 20,
+                    width: 200,
+                    height: 135,
+                  }}
+                />
+
+                <View style={{ margin: 12 }}>
+                  <Text style={{ fontSize: 16 }}>Chiken</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOff.png")}
+                      style={styles.imagefood}
+                    />
+                    <Text style={{}}>4.5</Text>
+                  </View>
+                </View>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <View style={styles.food}>
+                <Image
+                  source={require("../../../assets/PageFood/food4.png")}
+                  style={{
+                    paddingHorizontal: 20,
+                    width: 200,
+                    height: 135,
+                  }}
+                />
+
+                <View style={{ margin: 12 }}>
+                  <Text style={{ fontSize: 16 }}>Shrimp</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOn.png")}
+                      style={styles.imagefood}
+                    />
+                    <Image
+                      source={require("../../../assets/PageFood/StarOff.png")}
+                      style={styles.imagefood}
+                    />
+                    <Text style={{}}>4.5</Text>
+                  </View>
+                </View>
+              </View>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>
